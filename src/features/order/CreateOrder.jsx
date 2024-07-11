@@ -48,13 +48,23 @@ function CreateOrder() {
       <Form method="POST" action="/order/new">
         <div>
           <label>First Name</label>
-          <input type="text" name="customer" required />
+          <input
+            type="text"
+            name="customer"
+            required
+            className="border-sote-200 w-full rounded-full border px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3"
+          />
         </div>
 
         <div>
           <label>Phone number</label>
           <div>
-            <input type="tel" name="phone" required />
+            <input
+              type="tel"
+              name="phone"
+              required
+              className="border-sote-200 w-full rounded-full border px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3"
+            />
           </div>
           {formErrors?.phone && <p>formErrors.phone</p>}
         </div>
@@ -62,7 +72,12 @@ function CreateOrder() {
         <div>
           <label>Address</label>
           <div>
-            <input type="text" name="address" required />
+            <input
+              type="text"
+              name="address"
+              required
+              className="border-sote-200 w-full rounded-full border px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3"
+            />
           </div>
         </div>
 
@@ -79,7 +94,10 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button disabled={isSubmitting}>
+          <button
+            disabled={isSubmitting}
+            className="focus:rin inline-block rounded-full bg-yellow-400 px-4 py-3 font-semibold uppercase tracking-wide text-stone-800 transition-colors duration-300 hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:ring-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed"
+          >
             {isSubmitting ? "placing order..." : "Order now"}
           </button>
         </div>
